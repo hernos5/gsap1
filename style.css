@@ -18,10 +18,12 @@
 .section1 {
     height: 100vh;
     width: 100%;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
 }
 
 /* Navigation bar */
@@ -30,7 +32,7 @@
     align-items: center;
     justify-content: space-between;
     width: 90%;
-    padding: 30px 0px;
+    padding: 20px 0px;
     position: absolute;
     top: 0;
     left: 50%;
@@ -41,126 +43,151 @@
 .part2 {
     display: flex;
     align-items: center;
-    gap: 30px;
-    margin-left: auto; /* Moves the part2 section to the right */
+    gap: 20px;
 }
 
 /* Navigation Title */
 #nav h1 {
-    font-size: 30px;
+    font-size: clamp(22px, 3vw, 30px);
     font-weight: 600;
 }
 
 /* Button Styling */
-#nav button{
+#nav button {
     padding: 10px 20px;
     background: #09de42;
     border-radius: 10px;
     font-size: 15px;
-    font-weight: 60;
+    border: none;
 }
 
 #nav button:hover {
-    background: #a1e896 !important;
+    background: #a1e896;
     color: black;
 }
 
-
-.center{
-    padding: 80px;
+/* Center Content */
+.center {
+    padding: 5%;
     height: 85%;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-.center-part1{
-    height: 100%;
-    width: 50%;
+
+/* Left Side */
+.center-part1 {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
 }
-.center-part2{
-    height: 100%;
-    width: 50%;
-    position:relative;
-}
-.center-part2 img{
-    height: 100%;
-    position:absolute;
-    right: 0;
-}
+
 .center-part1 h1 {
-    max-width: 800px;
     font-family: 'China', Arial, sans-serif;
     line-height: 1.2;
-    font-size: clamp(28px, 5vw, 60px); /* Ensures responsiveness */
+    font-size: clamp(28px, 5vw, 60px);
 }
-.center-part1 p{
-    font-size: 20px;
-    width:95%;
-    margin-top:10px;
-    margin-bottom:50px;
 
+.center-part1 p {
+    font-size: 18px;
+    max-width: 90%;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
-.center-part1 button{
+
+.center-part1 button {
     padding: 10px 20px;
     background: #09de42;
     border-radius: 10px;
     font-size: 15px;
-    font-weight: 60;
-    border: black;
+    border: none;
 }
+
 button:hover {
     background: #a1e896;
 }
+
+/* Right Side (Image) */
+.center-part2 {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.center-part2 img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Section Bottom */
 .sectionBottom {
-    width: 100%;             /* Full width */
-    display: flex;           /* Enables flexbox */
-    justify-content: center; /* Centers horizontally */
-    align-items: center;     /* Aligns vertically */
-    position: absolute;      /* Positions it at the bottom */
-    bottom: 20px;            /* Adjust as needed */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
 }
+
 .sectionBottom img {
-    width: 150px;  /* Adjust as needed */
-    height: 100px;   /* Keeps aspect ratio */
+    width: 100px;
+    height: auto;
 }
-.section2 .services{
-    padding: 20px 79px;
+
+/* Services Section */
+.section2 .services {
+    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    flex-wrap: wrap;
     gap: 20px;
 }
-.services h3{
+
+.services h3 {
     background-color: #09de42;
     color: white;
     cursor: pointer;
     font-weight: 500;
-    padding: 5px 5px;
-    font-size: 25px;
+    padding: 5px 10px;
+    font-size: 20px;
     font-family: 'China';
+    text-align: center;
 }
+
 h3:hover {
     background: #a1e896;
 }
 
-.services p{
-    width: 40%;
-    font-size: 10px;
-    font: weight 500px;
+.services p {
+    width: 100%;
+    max-width: 400px;
+    font-size: 14px;
+    font-weight: 500;
 }
+
+/* Card Container */
 .container {
     width: 100%;
     padding: 40px 5%;
     display: flex;
     justify-content: center;
-    gap: 5vh;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
-.elm {
+/* Cards */
+.elm,
+.black {
     flex-shrink: 0;
-    height: auto; /* Allows content to define height */
-    width: 80%;
-    max-width: 600px; /* Prevents excessive stretching */
+    width: 90%;
+    max-width: 600px;
     background-color: white;
     border: 1px solid black;
     border-radius: 10px;
@@ -170,122 +197,120 @@ h3:hover {
     flex-direction: row;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
-/* Text Section */
-.elm-part1{
-    height: 100%;
-    width:50%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction:column;}
-/* Image Section */
-.elm-part2 {
-    flex: 1; /* Allows flexible width */
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Push image to the right */
-}
-
-.elm-part2 img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* Prevents distortion */
-}
-
-.elm-part1 h4{
-    display:flex;
-    align-items: center;
-    font-size:25px;
-    gap:20px;
-}
-.elm-part1 i{
-    size: 2px;
-    padding:2px;
-    background-color: black;
-    color: white;
-    border-radius: 50%;
-}
-.elm-part1 h2{
-    background-color: #09de42;
-    width: 25vh;
-    align-content: center;
-    align-items: center;
-    padding: 3px;
- 
-}
-.elm {
-    flex-shrink: 0;
-    height: auto; /* Allows content to define height */
-    width: 80%;
-    max-width: 600px; /* Prevents excessive stretching */
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: 0px 10px 0px black;
-    padding: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-}
-
-/* Text Section */
-.elm-part1{
-    height: 100%;
-    width:50%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction:column;}
-/* Image Section */
-.elm-part2 {
-    flex: 1; /* Allows flexible width */
-    display: flex;
-    align-items: center;
-    justify-content: flex-end; /* Push image to the right */
-}
-
-.elm-part2 img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* Prevents distortion */
-}
-
-.elm-part1 h4{
-    display:flex;
-    align-items: center;
-    font-size:25px;
-    gap:20px;
-}
-.elm-part1 i{
-    size: 2px;
-    padding:2px;
-    background-color: black;
-    color: white;
-    border-radius: 50%;
-}
-.elm-part1 h2{
-    background-color: #09de42;
-    width: 25vh;
-    align-content: center;
-    align-items: center;
-    padding: 3px;
- 
-}
-.black{
-    flex-shrink: 0;
-    height: auto; /* Allows content to define height */
-    width: 80%;
-    max-width: 600px; /* Prevents excessive stretching */
+/* Black Version of Cards */
+.black {
     background-color: rgb(101, 95, 95);
-    border: 1px solid black;
-    border-radius: 10px;
-    box-shadow: 0px 10px 0px black;
-    padding: 30px;
+}
+
+/* Text Section */
+.elm-part1 {
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+/* Image Section */
+.elm-part2 {
+    flex: 1;
+    display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+}
+
+.elm-part2 img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Headings inside Cards */
+.elm-part1 h4 {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    gap: 10px;
+}
+
+.elm-part1 i {
+    padding: 5px;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Centered Navigation */
+    #nav {
+        width: 95%;
+        padding: 15px 0px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .part2 {
+        margin-left: 0;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Center Section */
+    .center {
+        flex-direction: column;
+        padding: 5%;
+    }
+
+    .center-part1,
+    .center-part2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .center-part2 img {
+        width: 80%;
+        max-height: 300px;
+    }
+
+    /* Section Bottom */
+    .sectionBottom {
+        bottom: 10px;
+    }
+
+    .sectionBottom img {
+        width: 80px;
+    }
+
+    /* Services Section */
+    .services {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .services h3 {
+        font-size: 18px;
+    }
+
+    .services p {
+        width: 90%;
+    }
+
+    /* Cards */
+    .elm,
+    .black {
+        width: 95%;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .elm-part1,
+    .elm-part2 {
+        width: 100%;
+    }
 }
