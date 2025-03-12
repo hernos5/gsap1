@@ -18,12 +18,11 @@
 .section1 {
     height: 100vh;
     width: 100%;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    text-align: center;
-    padding: 20px;
 }
 
 /* Navigation bar */
@@ -32,76 +31,93 @@
     align-items: center;
     justify-content: space-between;
     width: 90%;
-    padding: 20px 0px;
+    padding: 20px 0;
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    flex-wrap: wrap;
 }
 
 /* Push .part2 to the right */
 .part2 {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 /* Navigation Title */
 #nav h1 {
-    font-size: clamp(22px, 3vw, 30px);
+    font-size: 24px;
     font-weight: 600;
 }
 
 /* Button Styling */
 #nav button {
-    padding: 10px 20px;
+    padding: 8px 16px;
     background: #09de42;
-    border-radius: 10px;
-    font-size: 15px;
-    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 #nav button:hover {
-    background: #a1e896;
+    background: #a1e896 !important;
     color: black;
 }
 
 /* Center Content */
 .center {
-    padding: 5%;
+    padding: 50px;
     height: 85%;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
-/* Left Side */
 .center-part1 {
-    flex: 1;
-    min-width: 300px;
+    height: 100%;
+    width: 50%;
     padding: 20px;
 }
 
+.center-part2 {
+    height: 100%;
+    width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.center-part2 img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive Headings */
 .center-part1 h1 {
+    max-width: 800px;
     font-family: 'China', Arial, sans-serif;
     line-height: 1.2;
-    font-size: clamp(28px, 5vw, 60px);
+    font-size: clamp(28px, 5vw, 50px);
+    text-align: center;
 }
 
 .center-part1 p {
     font-size: 18px;
-    max-width: 90%;
+    width: 95%;
     margin-top: 10px;
     margin-bottom: 30px;
+    text-align: center;
 }
 
+/* Buttons */
 .center-part1 button {
     padding: 10px 20px;
     background: #09de42;
-    border-radius: 10px;
+    border-radius: 8px;
     font-size: 15px;
     border: none;
 }
@@ -110,22 +126,7 @@ button:hover {
     background: #a1e896;
 }
 
-/* Right Side (Image) */
-.center-part2 {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.center-part2 img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Section Bottom */
+/* Bottom Section */
 .sectionBottom {
     width: 100%;
     display: flex;
@@ -136,18 +137,19 @@ button:hover {
 }
 
 .sectionBottom img {
-    width: 100px;
+    width: 120px;
     height: auto;
 }
 
-/* Services Section */
+/* Services */
 .section2 .services {
-    padding: 20px;
+    padding: 20px 10%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
+    text-align: center;
 }
 
 .services h3 {
@@ -155,10 +157,9 @@ button:hover {
     color: white;
     cursor: pointer;
     font-weight: 500;
-    padding: 5px 10px;
-    font-size: 20px;
+    padding: 8px 10px;
+    font-size: 22px;
     font-family: 'China';
-    text-align: center;
 }
 
 h3:hover {
@@ -167,56 +168,42 @@ h3:hover {
 
 .services p {
     width: 100%;
-    max-width: 400px;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 16px;
 }
 
 /* Card Container */
 .container {
     width: 100%;
-    padding: 40px 5%;
+    padding: 30px 5%;
     display: flex;
     justify-content: center;
-    gap: 30px;
     flex-wrap: wrap;
 }
 
-/* Cards */
-.elm,
-.black {
+/* Service Cards */
+.elm {
     flex-shrink: 0;
     width: 90%;
-    max-width: 600px;
+    max-width: 400px;
     background-color: white;
     border: 1px solid black;
     border-radius: 10px;
     box-shadow: 0px 10px 0px black;
-    padding: 30px;
+    padding: 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 15px;
+    text-align: center;
 }
 
-/* Black Version of Cards */
-.black {
-    background-color: rgb(101, 95, 95);
-}
-
-/* Text Section */
 .elm-part1 {
     width: 100%;
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
     flex-direction: column;
 }
 
-/* Image Section */
 .elm-part2 {
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -224,46 +211,27 @@ h3:hover {
 
 .elm-part2 img {
     max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    height: auto;
 }
 
-/* Headings inside Cards */
-.elm-part1 h4 {
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    gap: 10px;
-}
-
-.elm-part1 i {
-    padding: 5px;
-    background-color: black;
-    color: white;
-    border-radius: 50%;
-}
-
-/* Responsive Design */
+/* Media Queries */
 @media (max-width: 768px) {
-    /* Centered Navigation */
     #nav {
-        width: 95%;
-        padding: 15px 0px;
         flex-direction: column;
         align-items: center;
         text-align: center;
+        padding: 10px 0;
     }
 
     .part2 {
-        margin-left: 0;
         flex-direction: column;
         gap: 10px;
     }
 
-    /* Center Section */
     .center {
         flex-direction: column;
-        padding: 5%;
+        padding: 20px;
+        height: auto;
     }
 
     .center-part1,
@@ -273,44 +241,59 @@ h3:hover {
     }
 
     .center-part2 img {
-        width: 80%;
-        max-height: 300px;
+        max-width: 80%;
+        height: auto;
     }
 
-    /* Section Bottom */
-    .sectionBottom {
-        bottom: 10px;
-    }
-
-    .sectionBottom img {
-        width: 80px;
-    }
-
-    /* Services Section */
     .services {
         flex-direction: column;
+        align-items: center;
         text-align: center;
-    }
-
-    .services h3 {
-        font-size: 18px;
     }
 
     .services p {
         width: 90%;
+        font-size: 14px;
     }
 
-    /* Cards */
-    .elm,
-    .black {
-        width: 95%;
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .elm-part1,
-    .elm-part2 {
+    .elm {
         width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #nav h1 {
+        font-size: 20px;
+    }
+
+    #nav button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .center-part1 h1 {
+        font-size: 24px;
+    }
+
+    .center-part1 p {
+        font-size: 16px;
+    }
+
+    .services h3 {
+        font-size: 18px;
+        padding: 6px 8px;
+    }
+
+    .services p {
+        font-size: 12px;
+    }
+
+    .elm {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .elm-part1 h4 {
+        font-size: 20px;
     }
 }
